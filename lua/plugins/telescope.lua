@@ -1,6 +1,8 @@
 return {
-  'nvim-telescope/telescope.nvim', tag = '0.1.6',
-  dependencies = { 'nvim-lua/plenary.nvim' },
+  'nvim-telescope/telescope.nvim',
+  tag = '0.1.6',
+  event = "VeryLazy",
+  dependencies = { 'nvim-lua/plenary.nvim', 'nvim-lua/plenary.nvim', },
   config = function()
     local builtin = require("telescope.builtin")
     vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
@@ -8,5 +10,8 @@ return {
     vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
     vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
     vim.keymap.set('n', '<leader>fc', builtin.git_commits, {})
+    vim.keymap.set('n', '<leader>te', ':Telescope', {})
+    vim.keymap.set('n', '<leader>gb', builtin.git_branches, {})
+    vim.keymap.set('n', '<leader>gc', builtin.git_commits, {})
   end
 }

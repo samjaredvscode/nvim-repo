@@ -16,6 +16,8 @@ function M.setup()
       ["<C-d>"] = cmp.mapping.scroll_docs(-4),
       ["<C-f>"] = cmp.mapping.scroll_docs(4),
       ["<C-e>"] = cmp.mapping.abort(),
+      ["<C-cs>"] = cmp.mapping.complete_common_string(),
+      ["<C-i>"] = cmp.mapping.select_prev_item(),
       ['<C-s>'] = cmp.mapping.confirm({ select = true }),
       ["<C-n>"] = cmp.mapping(function(fallback)
         if cmp.visible() then

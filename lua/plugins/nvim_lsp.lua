@@ -4,6 +4,9 @@ return {
     "williamboman/mason.nvim",
     "folke/neodev.nvim",
     "python-lsp/python-lsp-server",
+    "dart-lang/dart-vim-plugin",
+    "natebosch/vim-lsc",
+    "natebosch/vim-lsc-dart",
   },
   config = function()
     vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
@@ -55,5 +58,6 @@ return {
       }
     })
     require('lspconfig').dartls.setup({})
+    require('lspconfig').pyright.setup({})
   end
 }
